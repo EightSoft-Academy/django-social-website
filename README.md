@@ -15,6 +15,7 @@ Build an authentication system for users to register, log in, edit their profile
 1. Using the Django authentication framework
 2. Creating user registration views
 3. Extending the user model with a custom profile model
+4. Messages framework (messagebox)
 4. Adding social authentication with Python Social Auth (Facebook, Google, Twitter)
 
 ## CHECKPOINT 2:
