@@ -10,25 +10,16 @@ In brief:
 - see activity from users they follow
 - like images shared by other users
 
-## It has the following elements:
-- An authentication system for users to register, log in, edit their profile,
-and change or reset their password
-- A follow system to allow users to follow each other on the website
-- A functionality to display shared images and implement a bookmarker
-for users to share images from any website
-- An activity stream that allows users to see the content uploaded by the
-people that they follow
-
 ## CHECKPOINT 1:
 Build an authentication system for users to register, log in, edit their profile, and change or reset their password.
 1. Using the Django authentication framework
 2. Creating user registration views
 3. Extending the user model with a custom profile model
-4. Adding social authentication with Python Social Auth
+4. Adding social authentication with Python Social Auth (Facebook, Google, Twitter)
 
 ## CHECKPOINT 2:
 Build a follow system to allow users to follow each other on the website.
-
+          
 
 ## CHECKPOINT 3:
 Build a functionality to display shared images and implement a bookmarker for users to share images from any website
