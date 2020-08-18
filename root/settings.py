@@ -24,7 +24,7 @@ SECRET_KEY = 'uk_+d^fk-y=58$v^_)6&7cha^j)u!^tkrlv4n-ws34u-r)=!xd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'social_django',
+    'django_extensions',
 
 ]
 
@@ -140,4 +141,18 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = 'XXX'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'XXX'  # Facebook App Secret
+# SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_TWITTER_KEY = 'XXX'  # Twitter API Key
+SOCIAL_AUTH_TWITTER_SECRET = 'XXX'  # Twitter API Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'XXX'  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXX'  # Google Consumer Secret
