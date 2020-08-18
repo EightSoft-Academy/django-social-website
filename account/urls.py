@@ -5,7 +5,6 @@ from . import views
 
 urlpatterns = [
     # path('login/', views.user_login, name='login'),
-    # post views
     path('', views.dashboard, name='dashboard'),
     path('login/', auth_views.LoginView.as_view(), name="login"),
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
@@ -25,7 +24,13 @@ urlpatterns = [
         template_name="account/password_reset_confirm.html"), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(
         template_name="account/password_reset_complete.html"), name='password_reset_complete'),
-]
 
+    # register
+    path('register/', views.register, name="register"),
+
+    # edit profile
+    path('edit/', views.edit, name='edit'),
+
+]
 
 # path('', include('django.contrib.auth.urls')),

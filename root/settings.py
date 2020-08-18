@@ -127,6 +127,10 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Media uploaded by users
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # Login, logout
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'

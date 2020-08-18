@@ -1,14 +1,19 @@
 from django import forms
 from django.contrib.auth.models import User
 
-
-# class LoginForm(forms.Form):
-#     """Don't use it! Just for demo purposes with accounts/login.html and .views/user_login view."""
-#     username = forms.CharField()
-#     password = forms.CharField(widget=forms.PasswordInput)
+from .models import Profile
 
 
-class UserRegistrationForm(forms.Form):
+class LoginForm(forms.Form):
+    """Don't use it! Just for demo purposes with accounts/login.html and .views/user_login view."""
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
+
+class UserRegistrationForm(forms.ModelForm):
+    """User first registration form"""
+    # from django.contrib.auth.forms import UserCreationForm
+
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 
@@ -22,3 +27,15 @@ class UserRegistrationForm(forms.Form):
             raise forms.ValidationError('Passwords don\'t match.')
 
         return cd['password2']
+
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = {'first_name', 'last_name', 'email'}
+
+
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = {'date_of_birth', 'photo'}
